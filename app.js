@@ -51,12 +51,55 @@
 //   });
 // });
 
-$(function (){
-  $('.box1').slideDown(function (){
-    $('.box1').css({
-      'background-color': '#0000FF',
-      'width': '200px',
-      'height': '100px'
-    }).slideUp();
+// $(function (){
+//   $('.box1').slideDown(function (){
+//     $('.box1').css({
+//       'background-color': '#0000FF',
+//       'width': '200px',
+//       'height': '100px'
+//     }).slideUp();
+//   });
+// });
+
+// Lesson-6 イベントの検出と動作設定
+// マウスオーバーとマウスアウトのイベントを設定してみる
+// $(function(){
+//   $('.box1').mouseover(function(){
+//     $('.box1').css({'background-color': '#0000FF'});
+//   });
+//   $('.box1').mouseout(function(){
+//     $('.box1').css({'background-color': '#FF0000'});
+//   });
+// });
+
+
+// cssで適用したclassを使いまわして、jsファイルで適用するしないを簡単に設定できる
+// $(function(){
+//   $('.box1').mouseover(function(){
+//     $('.box1').addClass('box1-ext');
+//   })
+//   $('.box1').mouseout(function(){
+//     $('.box1').removeClass('box1-ext');
+//   });
+// });
+
+// マウスクリックイベントを記述する
+$(function(){
+  $('.box1').on('click', function(){
+    $('.box1').addClass('box1-ext');
+  })
+  $('.box1').mouseout(function(){
+    $('.box1').removeClass('box1-ext');
   });
 });
+
+// 実験 .clickに変更したら
+// $(function(){
+//   $('.box1').click(function(){
+//     $('.box1').addClass('box1-ext');
+//   })
+//   $('.box1').mouseout(function(){
+//     $('.box1').removeClass('box1-ext');
+//   });
+// });
+
